@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 declare function contentWayPoint(): void;
 declare function sliderMain(): void;
@@ -11,7 +11,8 @@ declare function initializePopups(): void;
 @Component({
   selector: 'app-portfolio-page-single',
   templateUrl: './portfolio-page-single.component.html',
-  styleUrls: ['./portfolio-page-single.component.scss']
+  styleUrls: ['./portfolio-page-single.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PortfolioPageSingleComponent implements OnInit, AfterViewInit {
 
