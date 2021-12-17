@@ -1,0 +1,32 @@
+{
+  "overviewSlideDeck": [
+    {
+      "title": "Emily Tracy",
+      "description": "Creating user interfaces for over 20 years",
+      "slidePath": "assets/images/Lighthouse_bg_1_grayscale.jpg",
+      "hasAdditionalInfo": "False",
+      "additionalInfo": ""
+    },
+    {
+      "title": "About Me",
+      "description": "Explore my education and career",
+      "slidePath": "assets/images/AboutMe_bg.jpg",
+      "hasAdditionalInfo": "True",
+      "additionalInfo": "LEARN MORE"
+    },
+    {
+      "title": "My Work",
+      "description": "Samplings of my professional and personal projects",
+      "slidePath": "assets/images/MyWork_bg.jpg",
+      "hasAdditionalInfo": "True",
+      "additionalInfo": "VIEW MORE"
+    },
+    {
+      "title": "Timeline",
+      "description": "A visual history of my credentials",
+      "slidePath": "assets/images/Footsteps_bg.jpg",
+      "hasAdditionalInfo": "True",
+      "additionalInfo": "VIEW MORE"
+    }
+  ]
+}
