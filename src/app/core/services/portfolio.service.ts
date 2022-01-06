@@ -1,15 +1,17 @@
-import { IOverviewSlideDeck } from './../../shared/interfaces';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { map, mergeMap } from 'rxjs/operators';
+import { IAtAGlanceMetrics } from 'src/app/shared/interfaces';
 
 @Injectable()
 export class PortfolioService {
   private _portfolioUrl = './data/portfolio.json';
 
-  constructor(private _http: HttpClient) {}
+  constructor(private _http: HttpClient){
+  }
 
-  getHomeSlideDeck(): Observable<IOverviewSlideDeck> {
-    return this._http.get<IOverviewSlideDeck>(this._portfolioUrl);
+  getTechnologyMetrics(): Observable<IAtAGlanceMetrics>{
+    return this._http.get<IAtAGlanceMetrics>(this._portfolioUrl);
   }
 }
