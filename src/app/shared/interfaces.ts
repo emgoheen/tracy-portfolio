@@ -16,5 +16,6 @@ export interface IAtAGlanceMetrics{
 export interface IAtAGlanceMetric{
   technology: string;
   iconPath: string;
-  yearStarted: number;
+  totalYears: number;
 }
+
