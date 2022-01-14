@@ -1,4 +1,7 @@
+import { IOverviewSlide, IAbout, IAtAGlanceMetrics } from './../shared/interfaces';
 import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { PortfolioService } from '../core/services/portfolio.service';
 declare function contentWayPoint(): void;
 declare function sliderMain(): void;
 declare function dropdown(): void;
@@ -12,28 +15,36 @@ declare function counterWayPoint(): void;
   styleUrls: ['./about-page.component.scss']
 })
 export class AboutPageComponent implements OnInit, AfterViewInit {
-  desc: string = "";
 
-  constructor() { }
+  slide: IOverviewSlide =
+    {
+      "title": "About Me",
+      "description": "Cal Poly alum and 20 year industry veteran",
+      "slidePath": "assets/images/CalPoly_bg_lightened.jpg",
+      "placement": "Left",
+      "hasAdditionalInfo": false,
+      "additionalInfo": "",
+      "routerLink": ""
+    }
 
-  ngOnInit(): void {
-    this.setDescription();
+  about$?: Observable<IAbout>;
+
+  constructor(private portfolioService: PortfolioService) {
+    this.about$ = this.portfolioService.getAboutInfo();
+    // this.portfolioService.getTechnologyMetricsFromPortfolioStore()?.subscribe((s: IAtAGlanceMetrics) => {
+    //   console.log("done");
+    // });
   }
 
-  ngAfterViewInit(): void{
+  ngOnInit(): void {
+  }
+
+  ngAfterViewInit(): void {
     contentWayPoint();
     sliderMain();
     dropdown();
     goToTop();
     loaderPage();
     counterWayPoint();
-  }
-
-  private setDescription(){
-    this.desc = "I am an experienced software developer specializing in UI and frontend design and development. My interest in visual-based programming started at Cal Poly when I took classes in virtual reality and animation. These influenced me to do my senior project using Java 3D to highlight the visual effects on object positioning from specific types of matrix math computations. For a good portion of my career, I've been writing software applications for the live production/broadcast markets. I began with Windows-based application development using C#, Windows Forms, and then eventually, WPF and XAML. In more recent years, my focus has shifted to developing web-based applications using Angular and Typescript. If you are in need of some Angular web development experience, I may be able to help!";
-  }
-
-  public get description(){
-    return this.desc;
   }
 }
