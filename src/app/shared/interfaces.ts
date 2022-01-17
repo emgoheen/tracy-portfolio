@@ -10,7 +10,7 @@ export interface IOverviewSlide{
   routerLink: string;
 }
 
-export interface IPortfolio{
+export interface IExperience{
   atAGlanceMetrics: Observable<IAtAGlanceMetrics>,
   about: Observable<IAbout>
 }
@@ -35,5 +35,12 @@ export interface IAbout{
 export interface ISocialInfo{
   icon: string;
   url: string;
+}
+
+export interface IProject{
+  title: string,
+  imagePath: string,
+  routerLink: string,
+  technologies: string;
 }
 
