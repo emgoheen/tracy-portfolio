@@ -1,0 +1,32 @@
+{
+  "projects": [
+    {
+      "title": "Next-Gen media asset management solution",
+      "imagePath": "assets/images/GVAMPP_border.jpg",
+      "id": "proj1",
+      "technologies": "Angular 12, Typescript, Node.js, CSS/SCSS, HTML5 Supporting technologies: Jenkins, Git/Gitflow, Kubernetes",
+      "alignment": "col-md-4 text-center"
+    },
+    {
+      "title": "GV Stratus (Web Client)",
+      "imagePath": "assets/images/StratusWeb2.jpg",
+      "id": "proj2",
+      "technologies": "Angular 6, Typescript, Node.js, CSS/SCSS, HTML5",
+      "alignment": "col-md-4 text-center"
+    },
+    {
+      "title": "GV Stratus (Desktop Client)",
+      "imagePath": "assets/images/StratusDesktop.jpg",
+      "id": "proj3",
+      "technologies": "C#, WPF/XAML, MVVM",
+      "alignment": "col-md-4 text-center"
+    },
+    {
+      "title": "Skills Project",
+      "imagePath": "assets/images/skills_border.jpg",
+      "id": "proj4",
+      "technologies": "Angular 12, Typescript, Node.js, Angular Material, CSS/SCSS, HTML5, Bootstrap",
+      "alignment": "col-md-4 col-md-offset-4 text-center"
+    }
+  ]
+}

@@ -2,7 +2,7 @@
   <aside id="fh5co-hero">
     <div class="flexslider">
       <ul class="slides">
-         <li style="background-image: url(assets/images/SealRock_bg.jpg);">
+         <li style="background-image: url({{slide.slidePath}});">
            <div class="overlay-gradient"></div>
            <div class="row">
              <div class="col-md-6 col-md-offset-3 slider-text slider-text-bg">
@@ -19,39 +19,16 @@
 
   <div id="fh5co-work">
     <div class="row">
-      <div class="col-md-4 text-center animate-box">
-        <a routerLink="/portfolio/proj1" class="work" style="background-image: url(assets/images/GVAMPP_border.jpg); background-size: 100% auto">
-          <div class="desc">
-            <h3>Next-Gen media asset management solution</h3>
-            <span>Angular 12, Typescript, Node.js, CSS/SCSS, HTML5 Supporting technologies: Jenkins, Git/Gitflow, Kubernetes</span>
-          </div>
-        </a>
+      <div class="animate-box">
+        <div *ngFor="let p of (portfolioInfo$| async)?.projects" class="{{p.alignment}}">
+          <a routerLink="{{p.routerLink}}" class="work" style="background-image: url({{p.imagePath}}); background-size: 100% auto">
+            <div class="desc">
+              <h3>{{p.title}}</h3>
+              <span>{{p.technologies}}</span>
+            </div>
+          </a>
+        </div>
       </div>
-      <div class="col-md-4 text-center animate-box">
-        <a routerLink="/portfolio/proj2" class="work" style="background-image: url(assets/images/StratusWeb2.jpg); background-size: 100% auto">
-          <div class="desc">
-            <h3>GV Stratus (Web Client)</h3>
-            <span>Angular 6, Typescript, Node.js, CSS/SCSS, HTML5</span>
-          </div>
-        </a>
-      </div>
-      <div class="col-md-4 text-center animate-box">
-        <a routerLink="/portfolio/proj3" class="work" style="background-image: url(assets/images/StratusDesktop.jpg); background-size: 100% auto">
-          <div class="desc">
-            <h3>GV Stratus (Desktop Client)</h3>
-            <span>C#, WPF/XAML, MVVM</span>
-          </div>
-        </a>
-      </div>
-      <div class="col-md-4 col-md-offset-4 text-center animate-box">
-        <a routerLink="/portfolio/proj4" class="work" style="background-image: url(assets/images/skills_border.jpg); background-size: 100% auto">
-          <div class="desc">
-            <h3>Skills Project</h3>
-            <span>Angular 12, Typescript, Node.js, Angular Material, CSS/SCSS, HTML5, Bootstrap</span>
-          </div>
-        </a>
-      </div>
-    </div>
   </div>
 
 </div><!-- END container-wrap -->

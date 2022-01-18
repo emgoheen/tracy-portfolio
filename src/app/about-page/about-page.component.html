@@ -19,12 +19,12 @@
   </aside>
   <div id="fh5co-about">
     <div class="row animate-box">
-      <div class="col-md-6 col-md-offset-3 text-center heading-section">
-        <h3>{{(about$ | async)?.name}}</h3>
+      <div class="col-md-6 col-md-offset-3 text-center heading-section" *ngIf="about$ | async as about">
+        <h3>{{about.name}}</h3>
         <p [innerHTML]="(about$ | async)?.overview"></p>
         <div>
           <ul class="fh5co-social-icons">
-              <li *ngFor="let a of (about$ | async)?.socialInfo"> <a [attr.href]="a.url" target="_blank"><i class={{a.icon}}></i></a></li>
+              <li *ngFor="let a of about.socialInfo"> <a [attr.href]="a.url" target="_blank"><i class={{a.icon}}></i></a></li>
           </ul>
         </div>
       </div>

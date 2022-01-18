@@ -37,10 +37,15 @@ export interface ISocialInfo{
   url: string;
 }
 
+export interface IPortfolio{
+  projects: Array<IProject>;
+}
+
 export interface IProject{
   title: string,
   imagePath: string,
   routerLink: string,
   technologies: string;
+  alignment: string;
 }
 
