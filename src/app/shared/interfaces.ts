@@ -27,6 +27,9 @@ export interface IAtAGlanceMetric{
 }
 
 export interface IAbout{
+  slideTitle: string,
+  slidePath: string,
+  slideDescription: string,
   name: string,
   overview: string
   socialInfo: ISocialInfo[];
@@ -38,6 +41,9 @@ export interface ISocialInfo{
 }
 
 export interface IPortfolio{
+  slideTitle: string,
+  slidePath: string,
+  slideDescription: string,
   projects: Array<IProject>;
 }
 

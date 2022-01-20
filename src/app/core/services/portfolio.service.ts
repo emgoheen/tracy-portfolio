@@ -49,13 +49,16 @@ export class PortfolioService {
           return {
             title: x["title"],
             imagePath: x["imagePath"],
-            routerLink: `/portfolio/ + ${x["id"]}`,
+            routerLink: `/portfolio/${x["id"]}`,
             technologies: x["technologies"],
             alignment: x["alignment"]
           }
         })
 
         return {
+          slideTitle: portfolioData["slideTitle"],
+          slidePath: portfolioData["slidePath"],
+          slideDescription: portfolioData["slideDescription"],
           projects: projs
         }
       }),

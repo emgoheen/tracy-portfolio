@@ -15,18 +15,6 @@ declare function counterWayPoint(): void;
   styleUrls: ['./about-page.component.scss']
 })
 export class AboutPageComponent implements OnInit, AfterViewInit {
-
-  slide: IOverviewSlide =
-    {
-      "title": "About Me",
-      "description": "Cal Poly alum and 20 year industry veteran",
-      "slidePath": "assets/images/CalPoly_bg_lightened.jpg",
-      "placement": "Left",
-      "hasAdditionalInfo": false,
-      "additionalInfo": "",
-      "routerLink": ""
-    }
-
   about$?: Observable<IAbout>;
 
   constructor(private portfolioService: PortfolioService) {

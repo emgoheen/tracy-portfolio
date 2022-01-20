@@ -1,4 +1,7 @@
 {
+  "slideTitle": "My Work",
+  "slidePath": "assets/images/SealRock_bg.jpg",
+  "slideDescription": "Samplings of my professional and personal projects",
   "projects": [
     {
       "title": "Next-Gen media asset management solution",

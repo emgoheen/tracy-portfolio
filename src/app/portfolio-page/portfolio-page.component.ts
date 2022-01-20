@@ -16,18 +16,6 @@ declare function counterWayPoint(): void;
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PortfolioPageComponent implements OnInit, AfterViewInit {
-
-  slide: IOverviewSlide =
-  {
-    "title": "My Work",
-    "description": "Samplings of my professional and personal projects",
-    "slidePath": "assets/images/SealRock_bg.jpg",
-    "placement": "Center",
-    "hasAdditionalInfo": false,
-    "additionalInfo": "",
-    "routerLink": ""
-  }
-  
   portfolioInfo$?: Observable<IPortfolio>;
 
   constructor(private portfolioService: PortfolioService) {
