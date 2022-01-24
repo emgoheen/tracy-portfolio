@@ -68,7 +68,7 @@ export class PortfolioPageSingleComponent implements OnInit, AfterViewInit {
 
   public setImage(id: string){
     if(id == "proj1"){
-      this.imagePath = "assets/images/GVAMPP_border.jpg";
+      this.imagePath = "assets/images/GVAMPP_app.jpg";
     }
     else if(id == "proj2"){
       this.imagePath = "assets/images/StratusWeb2.jpg";
@@ -83,7 +83,7 @@ export class PortfolioPageSingleComponent implements OnInit, AfterViewInit {
 
   public setProjectTitle(id: string){
     if(id == "proj1"){
-      this.projTitle = "AMPP Asset Management"
+      this.projTitle = "GV AMPP Asset Management"
     }
     else if(id == "proj2"){
       this.projTitle = "GV Stratus (Web Client)"
@@ -107,7 +107,7 @@ export class PortfolioPageSingleComponent implements OnInit, AfterViewInit {
 
   public setDescription(id: string){
     if(id == "proj1"){
-      this.desc = "A next-generation media asset management system soon to be available through the GV AMPP cloud-native platform within the  <a href='https://www.grassvalley.com/products/cloud-based-workflows/cloud-based-workflows/gv-ampp/' target='_blank'> GV Media Universe</a> ecosystem.  Some of the features will include support for content creators who need to search, edit and organize their media.";
+      this.desc = "A next-generation media asset management system soon to be available through the GV AMPP cloud-native platform within the  <a href='https://www.grassvalley.com/products/cloud-based-workflows/gv-ampp-asset-management/' target='_blank'> GV Media Universe</a> ecosystem.  Some of the features will include support for content creators who need to search, edit and organize their media.";
     }
     else if(id == "proj2"){
       this.desc = "A web-based content management system that aids in video production and editing workflows.  It contains a comprehensive toolset that includes video metadata management, search, hierarchical folder organization, high-resolution or proxy access to shared storage content, editing/logging, and more.  A complete description and demo can be found <a href='https://www.grassvalley.com/products/media-asset-management/gv-stratus/' target='_blank'> here</a>.";

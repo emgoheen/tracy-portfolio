@@ -4,8 +4,8 @@
   "slideDescription": "Samplings of my professional and personal projects",
   "projects": [
     {
-      "title": "Next-Gen media asset management solution",
-      "imagePath": "assets/images/GVAMPP_border.jpg",
+      "title": "GV AMPP Asset Management",
+      "imagePath": "assets/images/GVAMPP_border2.jpg",
       "id": "proj1",
       "technologies": "Angular 12, Typescript, Node.js, CSS/SCSS, HTML5 Supporting technologies: Jenkins, Git/Gitflow, Kubernetes",
       "alignment": "col-md-4 text-center"
