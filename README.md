@@ -30,7 +30,7 @@ Run 'npm run deploy'.  Note that this only use to work from Powershell due to th
 ## Accessing the Git-hosted website
 
 The following URL can be accessed from any supported browser:  
-https://emgoheen.github.io/tracye-portfolio/home (or simply https://emgoheen.github.io/tracye-portfolio).
+https://emgoheen.github.io/tracy-portfolio/home (or simply https://emgoheen.github.io/tracy-portfolio).
 
 ## Further help
 
