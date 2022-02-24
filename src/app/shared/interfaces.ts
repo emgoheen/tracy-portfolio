@@ -48,10 +48,39 @@ export interface IPortfolio{
 }
 
 export interface IProject{
+  slideTitle: string,
+  slidePath: string,
+  slideDescription: string,
   title: string,
+  id: string,
   imagePath: string,
   routerLink: string,
-  technologies: string;
+  overviewTechList: string;
   alignment: string;
+  source: string;
+  description: string;
+  fullTechList: Array<string>;
+}
+
+export interface IProjectCollection{
+  projectCollection: {[key: string]: IProject};
+}
+
+export interface ITimeline{
+  slideTitle: string,
+  slidePath: string,
+  slideDescription: string,
+  quote: string,
+  college: string,
+  degree: string,
+  collegeRange: string,
+  experienceList: Array<IWorkExperience>
+}
+
+export interface IWorkExperience{
+  title: string,
+  company: string,
+  range: string,
+  duties: string
 }
 

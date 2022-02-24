@@ -1,0 +1,36 @@
+{
+  "slideTitle": "My Work",
+  "slidePath": "assets/images/Timeline_bg.jpg",
+  "slideDescription": "Samplings of my professional and personal projects",
+  "quote": "Time has no independent existence apart from the order of events by which we measure it. - Albert Einstein",
+  "college": "Cal Poly State University",
+  "degree": "B.S. Computer Science",
+  "collegeRange": "1996-2000",
+  "experience": [
+    {
+      "title": "Staff Software Engineer",
+      "company": "Grass Valley",
+      "range": "August 2005 - July 2021",
+      "duties": "Lead front-end web developer for GV AMPP Asset Management, a next generation cloud-based platform that facilitates media asset management and remote production for the video broadcast industry. Helped to design and develop the UI for managing, updating, displaying, and searching across assets and asset metadata. The UI framework was developed using TypeScript and Angular and was designed to run within a cloud-hosted microservice architecture.<br>Helped to design and develop the Windows-based video production and content management application, called GV STRATUS, using C# and WPF.<br>Participated in the design and development of a configuration and software deployment tool that customers used to commission and update their Grass Valley systems on site.<br>Worked on adding new features to an application that managed content for our line of video servers."
+    },
+    {
+      "title": "Software Engineer (Contractor)",
+      "company": "Tektronix",
+      "range": "April 2004 - July 2005",
+      "duties": "Worked on the C# Windows-based RF measurement software for the spectrum analyzer product line. Also helped to develop the automated build system using scripting."
+    },
+    {
+      "title": "Software Engineer",
+      "company": "Agilent Technologies",
+      "range": "June 2000 - March 2003",
+      "duties": "Developed Windows-based applications that create test signals for satellite and cellular base station testing."
+    },
+    {
+      "title": "Data Management",
+      "company": "EducAide Software",
+      "range": "June 1998 - December 1999",
+      "duties": "Worked on reviewing standardized test questions and adding them into the company’s proprietary database. Developed macros to facilitate some of this work."
+    }
+  ]
+}
+

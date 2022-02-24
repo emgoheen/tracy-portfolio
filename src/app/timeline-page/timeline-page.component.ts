@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { PortfolioService } from '../core/services/portfolio.service';
+import { ITimeline } from '../shared/interfaces';
 declare function contentWayPoint(): void;
 declare function sliderMain(): void;
 declare function dropdown(): void;
@@ -12,8 +15,11 @@ declare function counterWayPoint(): void;
   styleUrls: ['./timeline-page.component.scss']
 })
 export class TimelinePageComponent implements OnInit {
+  timelineInfo$?: Observable<ITimeline>;
 
-  constructor() { }
+  constructor(private portfolioService: PortfolioService) {
+    this.timelineInfo$ = this.portfolioService.getTimeline();
+   }
 
   ngOnInit(): void {
     contentWayPoint();

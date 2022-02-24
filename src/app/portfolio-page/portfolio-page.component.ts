@@ -19,7 +19,7 @@ export class PortfolioPageComponent implements OnInit, AfterViewInit {
   portfolioInfo$?: Observable<IPortfolio>;
 
   constructor(private portfolioService: PortfolioService) {
-    this.portfolioInfo$ = this.portfolioService.getPortfolioInfo();
+    this.portfolioInfo$ = this.portfolioService.getProjectOverview();
   }
 
   ngOnInit(): void {
