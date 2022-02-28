@@ -1,9 +1,13 @@
 import { Observable } from "rxjs";
 
-export interface IOverviewSlide{
-  title: string;
-  description: string;
+export interface ISlideInfo {
+  slideTitle: string;
+  slideDescription: string;
   slidePath: string;
+}
+
+export interface IOverviewSlide{
+  slideInfo: ISlideInfo;
   placement: string;
   hasAdditionalInfo: boolean;
   additionalInfo: string;
@@ -27,9 +31,7 @@ export interface IAtAGlanceMetric{
 }
 
 export interface IAbout{
-  slideTitle: string,
-  slidePath: string,
-  slideDescription: string,
+  slideInfo: ISlideInfo,
   name: string,
   overview: string
   socialInfo: ISocialInfo[];
@@ -41,16 +43,12 @@ export interface ISocialInfo{
 }
 
 export interface IPortfolio{
-  slideTitle: string,
-  slidePath: string,
-  slideDescription: string,
+  slideInfo: ISlideInfo
   projects: Array<IProject>;
 }
 
 export interface IProject{
-  slideTitle: string,
-  slidePath: string,
-  slideDescription: string,
+  slideInfo: ISlideInfo,
   title: string,
   id: string,
   imagePath: string,
@@ -67,14 +65,12 @@ export interface IProjectCollection{
 }
 
 export interface ITimeline{
-  slideTitle: string,
-  slidePath: string,
-  slideDescription: string,
+  slideInfo: ISlideInfo,
   quote: string,
   college: string,
   degree: string,
   collegeRange: string,
-  experienceList: Array<IWorkExperience>
+  experience: Array<IWorkExperience>
 }
 
 export interface IWorkExperience{

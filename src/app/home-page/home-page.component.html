@@ -2,26 +2,15 @@
   <aside id="fh5co-hero">
     <div class="flexslider">
       <ul class="slides">
-        <li *ngFor="let s of slides" style="background-image: url({{s.slidePath}});">
+        <li *ngFor="let s of slides" style="background-image: url({{s.slideInfo.slidePath}});">
           <div class="overlay-gradient"></div>
           <div class="container-fluid">
             <div class="row">
-              <div *ngIf="s.placement === 'Left'">
-                <div class="col-md-6 col-md-offset-3 col-md-pull-3 slider-text">
-                  <div class="slider-text-inner">
-                    <h1>{{s.title}}</h1>
-                    <h2>{{s.description}}</h2>
-                    <p *ngIf="s.additionalInfo"><a class="btn btn-primary btn-demo" routerLink={{s.routerLink}}>{{s.additionalInfo}}</a></p>
-                  </div>
-                </div>
-              </div>
-              <div *ngIf="s.placement === 'Center'">
-                <div class="col-md-6 col-md-offset-3 slider-text">
-                  <div class="slider-text-inner text-center">
-                    <h1>{{s.title}}</h1>
-                    <h2>{{s.description}}</h2>
-                    <p *ngIf="s.additionalInfo"><a class="btn btn-primary btn-demo" routerLink={{s.routerLink}}>{{s.additionalInfo}}</a></p>
-                  </div>
+              <div [ngClass]="s.placement === 'Left' ? 'col-md-6 col-md-offset-3 col-md-pull-3 slider-text' : 'col-md-6 col-md-offset-3 slider-text'">
+                <div [ngClass]="s.placement === 'Left' ? 'slider-text-inner' : 'slider-text-inner text-center'">
+                  <h1>{{s.slideInfo.slideTitle}}</h1>
+                  <h2>{{s.slideInfo.slideDescription}}</h2>
+                  <p *ngIf="s.additionalInfo"><a class="btn btn-primary btn-demo" routerLink={{s.routerLink}}>{{s.additionalInfo}}</a></p>
                 </div>
               </div>
             </div>

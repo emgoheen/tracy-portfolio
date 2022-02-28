@@ -2,13 +2,13 @@
   <aside id="fh5co-hero">
     <div class="flexslider">
       <ul class="slides">
-        <li style="background-image: url({{(projectInfo$ | async)?.slidePath}});">
+        <li style="background-image: url({{(projectInfo$ | async)?.slideInfo?.slidePath}});">
           <div class="overlay-gradient"></div>
           <div class="row">
             <div class="col-md-6 col-md-offset-3 slider-text slider-text-bg">
               <div class="slider-text-inner text-center" *ngIf="projectInfo$ | async as projectInfo">
-                <h1>{{projectInfo.slideTitle}}</h1>
-                <h2>{{projectInfo.slideDescription}}</h2>
+                <h1>{{projectInfo.slideInfo.slideTitle}</h1>
+                <h2>{{projectInfo.slideInfo.slideDescription}}</h2>
               </div>
             </div>
           </div>

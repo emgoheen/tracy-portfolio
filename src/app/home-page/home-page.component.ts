@@ -20,36 +20,44 @@ export class HomePageComponent implements OnInit, AfterViewInit {
 
   slides: IOverviewSlide[] = [
     {
-      "title": "Emily Tracy",
-      "description": "Creating user interfaces for over 20 years",
-      "slidePath": "assets/images/Lighthouse_bg_1_grayscale.jpg",
+      "slideInfo": {
+        "slideTitle": "Emily Tracy",
+        "slideDescription": "Creating user interfaces for over 20 years",
+        "slidePath": "assets/images/Lighthouse_bg_1_grayscale.jpg"
+      },
       "placement": "Left",
       "hasAdditionalInfo": false,
       "additionalInfo": "",
       "routerLink": ""
     },
     {
-      "title": "About Me",
-      "description": "Explore my education and career",
-      "slidePath": "assets/images/AboutMe_bg.jpg",
+      "slideInfo": {
+        "slideTitle": "About Me",
+        "slideDescription": "Explore my education and career",
+        "slidePath": "assets/images/AboutMe_bg.jpg",
+      },
       "placement": "Center",
       "hasAdditionalInfo": true,
       "additionalInfo": "LEARN MORE",
       "routerLink": "/about"
     },
     {
-      "title": "My Work",
-      "description": "Samplings of my professional and personal projects",
-      "slidePath": "assets/images/MyWork_bg.jpg",
+      "slideInfo": {
+        "slideTitle": "My Work",
+        "slideDescription": "Samplings of my professional and personal projects",
+        "slidePath": "assets/images/MyWork_bg.jpg",
+      },
       "placement": "Center",
       "hasAdditionalInfo": true,
       "additionalInfo": "VIEW MORE",
       "routerLink": "/portfolio"
     },
     {
-      "title": "Timeline",
-      "description": "A visual history of my credentials",
-      "slidePath": "assets/images/Footsteps_bg.jpg",
+      "slideInfo": {
+        "slideTitle": "Timeline",
+        "slideDescription": "A visual history of my credentials",
+        "slidePath": "assets/images/Footsteps_bg.jpg",
+      },
       "placement": "Left",
       "hasAdditionalInfo": true,
       "additionalInfo": "VIEW MORE",
@@ -61,9 +69,6 @@ export class HomePageComponent implements OnInit, AfterViewInit {
 
   constructor(private portfolioService: PortfolioService) {
     this.metricsAtAGlance$ = this.portfolioService.getTechnologyMetrics();
-    // this.portfolioService.getTechnologyMetrics().subscribe((s: IAtAGlanceMetrics) => {
-    //   console.log("done");
-    // });
   }
 
   ngOnInit(): void {

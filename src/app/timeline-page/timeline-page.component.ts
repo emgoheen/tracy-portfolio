@@ -19,7 +19,7 @@ export class TimelinePageComponent implements OnInit {
 
   constructor(private portfolioService: PortfolioService) {
     this.timelineInfo$ = this.portfolioService.getTimeline();
-   }
+  }
 
   ngOnInit(): void {
     contentWayPoint();
