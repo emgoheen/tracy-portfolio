@@ -80,3 +80,9 @@ export interface IWorkExperience{
   duties: string
 }
 
+// NGRX interfaces *****************************
+
+export interface IMasterPortfolio{
+  about: IAbout
+}
+

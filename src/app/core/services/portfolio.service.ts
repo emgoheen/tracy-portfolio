@@ -1,4 +1,4 @@
-import { IAtAGlanceMetric, IAbout, IPortfolio, IProject, IProjectCollection, ITimeline, IExperience, IWorkExperience } from './../../shared/interfaces';
+import { IAtAGlanceMetric, IAbout, IPortfolio, IProject, IProjectCollection, ITimeline, IExperience, IWorkExperience, IMasterPortfolio } from './../../shared/interfaces';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -11,6 +11,7 @@ export class PortfolioService {
   private _aboutUrl = './data/about.json';
   private _portfolioUrl = './data/portfolio.json';
   private _timelineUrl = './data/timeline.json';
+  private _masterPortfolioUrl = './data/masterportfolio.json';
   private _portfolioCollection?: IProjectCollection;
 
 
@@ -87,6 +88,12 @@ export class PortfolioService {
 
   getTimeline(): Observable<ITimeline>{
     return this._http.get<any>(this._timelineUrl).pipe(
+      share()
+    );
+  }
+
+  getMasterPortfolio(): Observable<IMasterPortfolio>{
+    return this._http.get<IMasterPortfolio>(this._masterPortfolioUrl).pipe(
       share()
     );
   }

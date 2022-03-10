@@ -1,7 +1,10 @@
-import { IOverviewSlide, IAbout, IAtAGlanceMetrics } from './../shared/interfaces';
+import { IAbout } from './../shared/interfaces';
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { PortfolioService } from '../core/services/portfolio.service';
+import { Store } from '@ngrx/store';
+import { getAboutData, State } from './state/about.reducer';  // IMPORTANT:  import state from the reducer and not from ngrx/store OR from app module
+import * as AboutActions from './state/about.actions';
+
 declare function contentWayPoint(): void;
 declare function sliderMain(): void;
 declare function dropdown(): void;
@@ -17,14 +20,15 @@ declare function counterWayPoint(): void;
 export class AboutPageComponent implements OnInit, AfterViewInit {
   about$?: Observable<IAbout>;
 
-  constructor(private portfolioService: PortfolioService) {
-    this.about$ = this.portfolioService.getAboutInfo();
-    // this.portfolioService.getTechnologyMetricsFromPortfolioStore()?.subscribe((s: IAtAGlanceMetrics) => {
-    //   console.log("done");
-    // });
-  }
+  constructor(private store: Store<State>) {}
 
   ngOnInit(): void {
+    // 1.  Dispatch the action
+    this.store.dispatch(AboutActions.loadAboutData());
+
+    // 2.  Select the state needed with a selector (in this case, getting the whole portfolio right now)
+    // TODO:  Left off here, need to add another selector for retrieving just the "about" chunk
+    this.about$ = this.store.select(getAboutData);
   }
 
   ngAfterViewInit(): void {
