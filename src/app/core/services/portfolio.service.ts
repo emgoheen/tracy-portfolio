@@ -1,7 +1,7 @@
-import { IAtAGlanceMetric, IAbout, IPortfolio, IProject, IProjectCollection, ITimeline, IExperience, IWorkExperience, IMasterPortfolio } from './../../shared/interfaces';
+import { IAtAGlanceMetric, IAbout, IPortfolio, IProject, IProjectCollection, ITimeline, IMasterPortfolio, initialMasterPortfolioData } from './../../shared/interfaces';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { map, share } from 'rxjs/operators';
 import { IAtAGlanceMetrics } from 'src/app/shared/interfaces';
 
@@ -14,8 +14,22 @@ export class PortfolioService {
   private _masterPortfolioUrl = './data/masterportfolio.json';
   private _portfolioCollection?: IProjectCollection;
 
+  private _portfolio$: BehaviorSubject<IMasterPortfolio> = new BehaviorSubject<IMasterPortfolio>(initialMasterPortfolioData);
 
   constructor(private _http: HttpClient){
+    // This is the way you'd test a slow service call:
+    // this._http.get<IMasterPortfolio>(this._masterPortfolioUrl)
+    // .subscribe(portfolio => {
+    //   setTimeout(() => {
+    //     console.log("Now we're going to call the BehaviorSubject");
+    //     this._portfolio$.next(portfolio)
+    //   }, 3000);
+    // });
+
+    this._http.get<IMasterPortfolio>(this._masterPortfolioUrl)
+      .subscribe(portfolio => {
+          this._portfolio$.next(portfolio);
+      });
   }
 
   getTechnologyMetrics(): Observable<IAtAGlanceMetrics>{
@@ -96,5 +110,9 @@ export class PortfolioService {
     return this._http.get<IMasterPortfolio>(this._masterPortfolioUrl).pipe(
       share()
     );
+  }
+
+  getMasterPortfolioObs(): Observable<IMasterPortfolio> {
+    return this._portfolio$.asObservable();
   }
 }

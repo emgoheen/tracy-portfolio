@@ -23,11 +23,16 @@ export class AboutPageComponent implements OnInit, AfterViewInit {
   constructor(private store: Store<State>) {}
 
   ngOnInit(): void {
+    // This is a way to test the subject/observable pattern
+    // before integrating it into an effect.
+    // this.service.getPortfolioObs().subscribe(portfolio => {
+    //   console.log("We got it!");
+    // })
+
     // 1.  Dispatch the action
     this.store.dispatch(AboutActions.loadAboutData());
 
     // 2.  Select the state needed with a selector (in this case, getting the whole portfolio right now)
-    // TODO:  Left off here, need to add another selector for retrieving just the "about" chunk
     this.about$ = this.store.select(getAboutData);
   }
 

@@ -3,15 +3,15 @@ import { NgModule } from '@angular/core';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { AboutRoutingModule } from './about-routing.module';
-import { PortfolioEffects } from './state/about.effects';
+import { AboutEffects } from './state/about.effects';
 import { aboutReducer } from './state/about.reducer';
 
 @NgModule({
   imports: [ 
     CommonModule, 
     AboutRoutingModule,
-    StoreModule.forFeature('portfolio', aboutReducer),
-    EffectsModule.forFeature([PortfolioEffects])
+    StoreModule.forFeature('about', aboutReducer),
+    EffectsModule.forFeature([AboutEffects])
    ],
   declarations: [AboutRoutingModule.components],
 })

@@ -27,7 +27,7 @@ const initialState: AboutState = {
 }
 
 // Can only be used inside of this code file
-const getAboutFeatureState = createFeatureSelector<AboutState>('portfolio');
+const getAboutFeatureState = createFeatureSelector<AboutState>('about');
 
 export const getAboutData = createSelector(
     getAboutFeatureState,

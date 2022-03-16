@@ -83,6 +83,28 @@ export interface IWorkExperience{
 // NGRX interfaces *****************************
 
 export interface IMasterPortfolio{
-  about: IAbout
+  about: IAbout,
+  portfolio: IPortfolio
+}
+
+export const initialMasterPortfolioData: IMasterPortfolio = {
+  about: {
+    slideInfo: {
+      slideTitle: "",
+      slideDescription: "",
+      slidePath: "",
+    },
+    name: "",
+    overview: "",
+    socialInfo: []
+  },
+  portfolio: {
+    slideInfo: {
+      slideTitle: "",
+      slideDescription: "",
+      slidePath: "",
+    },
+    projects: []
+  }
 }
 

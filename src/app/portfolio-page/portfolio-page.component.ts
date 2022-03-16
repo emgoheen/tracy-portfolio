@@ -1,7 +1,10 @@
-import { IOverviewSlide, IProject, IPortfolio } from './../shared/interfaces';
+import { IPortfolio } from './../shared/interfaces';
 import { Component, OnInit, AfterViewInit, ChangeDetectionStrategy } from '@angular/core';
-import { PortfolioService } from '../core/services/portfolio.service';
 import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { getPortfolioData, State } from './state/portfolio.reducer';
+import * as PortfolioActions from './state/portfolio.actions';
+
 declare function contentWayPoint(): void;
 declare function sliderMain(): void;
 declare function dropdown(): void;
@@ -18,11 +21,15 @@ declare function counterWayPoint(): void;
 export class PortfolioPageComponent implements OnInit, AfterViewInit {
   portfolioInfo$?: Observable<IPortfolio>;
 
-  constructor(private portfolioService: PortfolioService) {
-    this.portfolioInfo$ = this.portfolioService.getProjectOverview();
+  constructor(private store: Store<State>) {
   }
 
   ngOnInit(): void {
+    // 1.  Dispatch the action
+    this.store.dispatch(PortfolioActions.loadPortfolioData());
+
+    // 2.  Select the state needed with a selector (in this case, getting the whole portfolio right now)
+    this.portfolioInfo$ = this.store.select(getPortfolioData);
   }
 
   ngAfterViewInit(): void{

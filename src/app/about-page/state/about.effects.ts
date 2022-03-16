@@ -6,16 +6,16 @@ import { PortfolioService } from "src/app/core/services/portfolio.service"
 import * as AboutActions from './about.actions';
 
 @Injectable()
-export class PortfolioEffects {
+export class AboutEffects {
     constructor(private actions$: Actions,
         private portfolioService: PortfolioService) { }
 
     // NOTE:  mergeMap handles subscriptions/requests in parallel so use this when
     // order of the calls doesn't matter.
-    loadProducts$ = createEffect(() => {
+    loadAboutInfo$ = createEffect(() => {
         return this.actions$.pipe(
             ofType(AboutActions.loadAboutData),
-            mergeMap(() => this.portfolioService.getMasterPortfolio().pipe(
+            mergeMap(() => this.portfolioService.getMasterPortfolioObs().pipe(
                 map(portfolio => AboutActions.loadAboutDataSuccess({ about: portfolio.about })),
                 catchError(error => of(AboutActions.loadAboutDataFailure({ error})))
             ))
