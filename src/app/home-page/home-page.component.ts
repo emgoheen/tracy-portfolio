@@ -1,8 +1,10 @@
 import { IAtAGlanceMetrics } from './../shared/interfaces';
 import { Component, OnInit, AfterViewInit, ChangeDetectionStrategy, Input, OnChanges, SimpleChanges, ChangeDetectorRef, NgZone } from '@angular/core';
 import { Observable } from 'rxjs';
-import { PortfolioService } from '../core/services/portfolio.service';
 import { IOverviewSlide } from '../shared/interfaces';
+import { Store } from '@ngrx/store';
+import { getHomeData, State } from './state/home.reducer';
+import * as HomeActions from './state/home.actions';
 declare function contentWayPoint(): void;
 declare function sliderMain(): void;
 declare function dropdown(): void;
@@ -67,11 +69,14 @@ export class HomePageComponent implements OnInit, AfterViewInit {
 
   metricsAtAGlance$?: Observable<IAtAGlanceMetrics>;
 
-  constructor(private portfolioService: PortfolioService) {
-    this.metricsAtAGlance$ = this.portfolioService.getTechnologyMetrics();
-  }
+  constructor(private store: Store<State>) {}
 
   ngOnInit(): void {
+    // 1.  Dispatch the action
+    this.store.dispatch(HomeActions.loadHomeData());
+
+    // 2.  Select the state needed with a selector (in this case, getting the whole portfolio right now)
+    this.metricsAtAGlance$ = this.store.select(getHomeData);
   }
 
   ngAfterViewInit(): void {

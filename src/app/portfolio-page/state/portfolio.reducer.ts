@@ -1,6 +1,6 @@
 import * as AppState from '../../state/app.state';
 import * as PortfolioActions from './portfolio.actions';
-import { IPortfolio } from "src/app/shared/interfaces";
+import { initialPortfolioData, IPortfolio } from "src/app/shared/interfaces";
 import { createFeatureSelector, createReducer, createSelector, on } from '@ngrx/store';
 
 export interface State extends AppState.State { // Lazy loaded states here
@@ -13,14 +13,7 @@ export interface PortfolioState{
 }
 
 const initialState: PortfolioState = {
-    portfolio: {
-        slideInfo: {
-            slideTitle: "",
-            slideDescription: "",
-            slidePath: "",
-        },
-        projects: []
-    },
+    portfolio: initialPortfolioData,
     error: ''
 }
 
@@ -50,7 +43,7 @@ export const portfolioReducer = createReducer<PortfolioState>(
         return {
             ...state,
             portfolio: initialState.portfolio,
-            error: ''
+            error: action.error
         }
     })
 );

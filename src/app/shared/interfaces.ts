@@ -1,5 +1,3 @@
-import { Observable } from "rxjs";
-
 export interface ISlideInfo {
   slideTitle: string;
   slideDescription: string;
@@ -12,11 +10,6 @@ export interface IOverviewSlide{
   hasAdditionalInfo: boolean;
   additionalInfo: string;
   routerLink: string;
-}
-
-export interface IExperience{
-  atAGlanceMetrics: Observable<IAtAGlanceMetrics>,
-  about: Observable<IAbout>
 }
 
 export interface IAtAGlanceMetrics{
@@ -84,27 +77,71 @@ export interface IWorkExperience{
 
 export interface IMasterPortfolio{
   about: IAbout,
-  portfolio: IPortfolio
+  portfolio: IPortfolio,
+  timeline: ITimeline,
+  metrics: IAtAGlanceMetrics
+}
+
+
+export const initialHomeData: IAtAGlanceMetrics = {
+  title: "",
+  metrics: []
+}
+
+export const initialAboutData: IAbout = {
+  slideInfo: {
+    slideTitle: "",
+    slideDescription: "",
+    slidePath: "",
+  },
+  name: "",
+  overview: "",
+  socialInfo: []
+}
+
+export const initialProjectData: IProject = {
+  slideInfo: {
+    slideTitle: "",
+    slideDescription: "",
+    slidePath: ""  
+  },
+  title: "",
+  id: "",
+  imagePath: "",
+  routerLink: "",
+  overviewTechList: "",
+  alignment: "",
+  source: "",
+  description: "",
+  fullTechList: []
+}
+
+export const initialPortfolioData: IPortfolio = {
+  slideInfo: {
+    slideTitle: "",
+    slideDescription: "",
+    slidePath: "",
+  },
+  projects: [initialProjectData]
+}
+
+export const initialTimelineData: ITimeline = {
+  slideInfo: {
+    slideTitle: "",
+    slideDescription: "",
+    slidePath: ""  
+  },
+  quote: "",
+  college: "",
+  degree: "",
+  collegeRange: "",
+  experience: []
 }
 
 export const initialMasterPortfolioData: IMasterPortfolio = {
-  about: {
-    slideInfo: {
-      slideTitle: "",
-      slideDescription: "",
-      slidePath: "",
-    },
-    name: "",
-    overview: "",
-    socialInfo: []
-  },
-  portfolio: {
-    slideInfo: {
-      slideTitle: "",
-      slideDescription: "",
-      slidePath: "",
-    },
-    projects: []
-  }
+  about: initialAboutData,
+  portfolio: initialPortfolioData,
+  timeline: initialTimelineData, 
+  metrics: initialHomeData
 }
 

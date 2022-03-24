@@ -1,6 +1,6 @@
 import * as AppState from '../../state/app.state';
 import * as AboutActions from './about.actions';
-import { IAbout } from "src/app/shared/interfaces";
+import { IAbout, initialAboutData } from "src/app/shared/interfaces";
 import { createFeatureSelector, createReducer, createSelector, on } from '@ngrx/store';
 
 export interface State extends AppState.State { // Lazy loaded states here
@@ -13,16 +13,7 @@ export interface AboutState{
 }
 
 const initialState: AboutState = {
-    about: {
-        slideInfo: {
-            slideTitle: '',
-            slideDescription: '',
-            slidePath: ''
-        },
-        name: '',
-        overview: '',
-        socialInfo: []
-    },
+    about: initialAboutData,
     error: ''
 }
 

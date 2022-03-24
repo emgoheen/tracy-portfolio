@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { PortfolioService } from '../core/services/portfolio.service';
 import { ITimeline } from '../shared/interfaces';
+import * as TimelineActions from './state/timeline.actions';
+import { getTimelineData, State } from './state/timeline.reducer';
 declare function contentWayPoint(): void;
 declare function sliderMain(): void;
 declare function dropdown(): void;
@@ -17,8 +19,8 @@ declare function counterWayPoint(): void;
 export class TimelinePageComponent implements OnInit {
   timelineInfo$?: Observable<ITimeline>;
 
-  constructor(private portfolioService: PortfolioService) {
-    this.timelineInfo$ = this.portfolioService.getTimeline();
+  constructor(private store: Store<State>) {
+    //this.timelineInfo$ = this.portfolioService.getTimeline();
   }
 
   ngOnInit(): void {
@@ -28,6 +30,11 @@ export class TimelinePageComponent implements OnInit {
     goToTop();
     loaderPage();
     counterWayPoint();
-  }
 
+    // 1.  Dispatch the action
+    this.store.dispatch(TimelineActions.loadTimelineData());
+
+    // 2.  Select the state needed with a selector (in this case, getting the whole portfolio right now)
+    this.timelineInfo$ = this.store.select(getTimelineData);  
+  }
 }
