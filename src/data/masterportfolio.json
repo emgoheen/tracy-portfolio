@@ -21,9 +21,9 @@
             "yearStarted": 2017
         },
         {
-            "technology": "Jira",
-            "iconPath": "fab fa-jira fa-lg",
-            "yearStarted": 2010
+            "technology": "NgRx",
+            "iconPath": "fas fa-sync-alt fa-lg",
+            "yearStarted": 2021
         },
         {
             "technology": "CSS/SCSS",
