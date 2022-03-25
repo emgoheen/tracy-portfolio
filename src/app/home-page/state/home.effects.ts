@@ -3,7 +3,7 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { of } from "rxjs";
 import { catchError, map, mergeMap } from "rxjs/operators";
 import { PortfolioService } from "src/app/core/services/portfolio.service"
-import * as HomeActions from './home.actions';
+import { HomeActions } from ".";
 
 @Injectable()
 export class HomeEffects {

@@ -3,8 +3,7 @@ import { Component, OnInit, AfterViewInit, ChangeDetectionStrategy, Input, OnCha
 import { Observable } from 'rxjs';
 import { IOverviewSlide } from '../shared/interfaces';
 import { Store } from '@ngrx/store';
-import { getHomeData, State } from './state/home.reducer';
-import * as HomeActions from './state/home.actions';
+import { getHomeData, HomeActions, State } from './state';
 declare function contentWayPoint(): void;
 declare function sliderMain(): void;
 declare function dropdown(): void;

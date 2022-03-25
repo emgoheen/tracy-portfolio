@@ -1,39 +1,16 @@
-import * as AppState from '../../state/app.state';
-import * as HomeActions from './home.actions';
-import { IAtAGlanceMetrics, initialHomeData, IOverviewSlide } from "src/app/shared/interfaces";
-import { createFeatureSelector, createReducer, createSelector, on } from '@ngrx/store';
-
-export interface State extends AppState.State { // Lazy loaded states here
-    metrics: HomeState;
-}
+import { IAtAGlanceMetrics, initialHomeData } from "src/app/shared/interfaces";
+import { createReducer, on } from '@ngrx/store';
+import { HomeActions } from ".";
 
 export interface HomeState{
     metrics: IAtAGlanceMetrics;
     error: string;
 }
 
-export interface HomeSlideState{
-    slides: IOverviewSlide[];
-}
-
 const initialState: HomeState = {
     metrics: initialHomeData,
     error: ''
 }
-
-
-// Can only be used inside of this code file
-const getHomeFeatureState = createFeatureSelector<HomeState>('home');
-
-export const getHomeData = createSelector(
-    getHomeFeatureState,
-    state => state.metrics
-);
-
-export const getError = createSelector(
-    getHomeFeatureState,
-    state => state.error
-);
 
 export const homeReducer = createReducer<HomeState>(
     initialState,

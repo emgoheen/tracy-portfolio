@@ -8,7 +8,8 @@ import { HomeEffects } from './state/home.effects';
 import { homeReducer } from './state/home.reducer';
 
 @NgModule({
-  imports: [ HomeRoutingModule, 
+  imports: [ 
+    HomeRoutingModule, 
     CommonModule,
     StoreModule.forFeature('home', homeReducer),
     EffectsModule.forFeature([HomeEffects]) 

@@ -2,8 +2,7 @@ import { IAbout } from './../shared/interfaces';
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
-import { getAboutData, State } from './state/about.reducer';  // IMPORTANT:  import state from the reducer and not from ngrx/store OR from app module
-import * as AboutActions from './state/about.actions';
+import { AboutActions, getAboutData, State } from './state';
 
 declare function contentWayPoint(): void;
 declare function sliderMain(): void;

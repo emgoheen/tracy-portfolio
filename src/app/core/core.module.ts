@@ -6,6 +6,9 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 
+// Since this module is setup to only be loaded into AppModule, the way that PortfolioService is
+// declared here as a provider would be the same as decorating the service itself with a providedIn: 'root'
+// @Injectable decorator
 @NgModule({
   imports: [
     CommonModule,

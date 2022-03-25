@@ -2,8 +2,7 @@ import { IPortfolio } from './../shared/interfaces';
 import { Component, OnInit, AfterViewInit, ChangeDetectionStrategy } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
-import { getPortfolioData, State } from './state/portfolio.reducer';
-import * as PortfolioActions from './state/portfolio.actions';
+import { getPortfolioData, PortfolioActions, State } from './state';
 
 declare function contentWayPoint(): void;
 declare function sliderMain(): void;

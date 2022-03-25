@@ -3,7 +3,7 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { of } from "rxjs";
 import { catchError, map, mergeMap } from "rxjs/operators";
 import { PortfolioService } from "src/app/core/services/portfolio.service"
-import * as TimelineActions from './timeline.actions';
+import { TimelineActions } from ".";
 
 @Injectable()
 export class TimelineEffects {
