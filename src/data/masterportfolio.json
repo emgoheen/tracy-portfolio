@@ -162,9 +162,9 @@
     },
     "timeline": {
         "slideInfo": {
-            "slideTitle": "My Work",
+            "slideTitle": "Timeline",
             "slidePath": "assets/images/Timeline_bg.jpg",
-            "slideDescription": "Samplings of my professional and personal projects"
+            "slideDescription": "A history of my education and work"
         },
         "quote": "Time has no independent existence apart from the order of events by which we measure it. - Albert Einstein",
         "college": "Cal Poly State University",
