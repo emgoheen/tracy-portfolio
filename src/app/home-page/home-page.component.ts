@@ -1,5 +1,5 @@
 import { IAtAGlanceMetrics } from './../shared/interfaces';
-import { Component, OnInit, AfterViewInit, ChangeDetectionStrategy, Input, OnChanges, SimpleChanges, ChangeDetectorRef, NgZone } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ChangeDetectionStrategy } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IOverviewSlide } from '../shared/interfaces';
 import { Store } from '@ngrx/store';
@@ -19,6 +19,10 @@ declare function counterWayPoint(): void;
 })
 export class HomePageComponent implements OnInit, AfterViewInit {
 
+  // Needed to hard-code the slides here as opposed to retrieving them from the json file like the
+  // other data because of some weirdness with the flexslider control which is a control that is
+  // controlled by some javascript and needs to have the data immediately available in order to
+  // render correctly.
   slides: IOverviewSlide[] = [
     {
       "slideInfo": {

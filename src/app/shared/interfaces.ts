@@ -73,8 +73,6 @@ export interface IWorkExperience{
   duties: string
 }
 
-// NGRX interfaces *****************************
-
 export interface IMasterPortfolio{
   about: IAbout,
   portfolio: IPortfolio,
@@ -82,7 +80,7 @@ export interface IMasterPortfolio{
   metrics: IAtAGlanceMetrics
 }
 
-
+// Initial values for use in the reducers
 export const initialHomeData: IAtAGlanceMetrics = {
   title: "",
   metrics: []
