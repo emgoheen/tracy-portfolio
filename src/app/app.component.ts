@@ -19,7 +19,6 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    this.title.setTitle(`Emily's Portfolio ${VERSION.full}`)
   }
 
   ngAfterViewInit(): void {
